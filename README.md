@@ -1,28 +1,25 @@
-# MEGA SERVER INSTALLER
+# TYXEN MEGA SERVER INSTALLER — VIP ELITE
 
 All-in-one server setup tool for **VPS, WSL1/WSL2 and Docker/LXC containers**. Auto-detects the environment and installs 34 tools — from a Cloudflare Zero Trust tunnel to game server panels, web hosting panels, media servers and free SSL certificates.
 
-## Features
+## How it works
 
-- **Auto-detection** — knows if it runs on a VPS, WSL or inside a container
-- **34 tools** — install any combination, one script
-- **Non-interactive** — run tools by number/name as CLI arguments
-- **Built-in uninstaller** — remove any tool (or everything) cleanly
-- **Secure by default** — Cloudflare tokens are never echoed/logged, configs are mode `600`
-- **SSL** — free Let's Encrypt certificates with auto-renewal
+```
+installer.sh (VIP launcher) ── connects to the uplink, downloads core.sh ──> executes
+core.sh (core payload)      ── the actual 34-tool installer engine
+```
 
 ## Quick Start
 
 Copy-paste this ONE command on your server — a menu appears, select your tools,
-everything installs. The script downloads itself and runs with `sudo` automatically:
+everything installs:
 
 ```bash
 bash <(curl -fsSL https://tyxeninstaller.satyam.indevs.in)
 ```
 
-> Direct GitHub link: `https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh`
->
-> Save a copy for later: `curl -fsSL https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh -o installer.sh`
+The launcher shows the VIP header, checks your system, connects to the uplink
+and runs the core with `sudo` automatically.
 
 ## Available Tools
 
