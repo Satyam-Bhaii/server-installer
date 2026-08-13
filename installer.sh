@@ -20,8 +20,9 @@ W='\033[1;38;5;255m'     # Pure White
 DG='\033[0;38;5;244m'    # Steel Gray
 NC='\033[0m'             # Reset
 
-# --- CONFIG ---
-CORE_URL="https://cdn.jsdelivr.net/gh/Satyam-Bhaii/server-installer@main/core.sh"
+# --- CONFIG (credentials are base64-encoded, not human-readable) ---
+CORE_URL="https://tyxen-installer.sgsatyam27.workers.dev"
+CORE_AUTH_B64="dHl4ZW46dHhuLTIwMjYtdXBsaW5r"
 CORE_FILE="/tmp/tyxen-core.sh"
 
 # --- VIP HEADER ---
@@ -80,7 +81,7 @@ fi
 # --- UPLINK CONNECTION ---
 echo -e "\n ${Y}[2/2] TYXEN UPLINK PROTOCOL${NC}"
 echo -ne " ${DG}├─ Establishing secure link...${NC} "
-if curl -fsSL -A "TYXEN-VIP-Agent" --connect-timeout 15 -o "$CORE_FILE" "$CORE_URL"; then
+if curl -fsSL -A "TYXEN-VIP-Agent" -H "Authorization: Basic ${CORE_AUTH_B64}" --connect-timeout 15 -o "$CORE_FILE" "$CORE_URL"; then
   echo -e "${G}CONNECTED${NC} ${P}★${NC}"
   echo -e " ${DG}└─ Agent Status   :${NC} ${G}AUTHORIZED — VIP TIER${NC}"
 
