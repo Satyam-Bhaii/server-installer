@@ -33,6 +33,27 @@
 
 set -euo pipefail
 
+# ----------------------------------------------------------------------------
+#  Online bootstrap: allow 'curl | bash' / 'bash <(curl ...)' execution.
+#  Materializes the script to /tmp and re-runs it with sudo (if needed),
+#  so the interactive menu, root tools and --help all work normally.
+# ----------------------------------------------------------------------------
+if [ "$0" = "bash" ] || [ "$0" = "-bash" ] || [[ "$0" == /dev/fd/* ]] || [ ! -f "$0" ]; then
+  BOOTSTRAP_URL="https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh"
+  BOOTSTRAP_FILE="/tmp/server-installer.sh"
+  echo "Downloading server-installer from GitHub..."
+  curl -fsSL "$BOOTSTRAP_URL" -o "$BOOTSTRAP_FILE" || {
+    echo "Download failed. Check your internet connection."
+    exit 1
+  }
+  chmod 755 "$BOOTSTRAP_FILE"
+  if [ "$(id -u)" -eq 0 ]; then
+    exec bash "$BOOTSTRAP_FILE" "$@"
+  else
+    exec sudo -E bash "$BOOTSTRAP_FILE" "$@"
+  fi
+fi
+
 GREEN='\033[0;32m'; YELLOW='\033[1;33m'; RED='\033[0;31m'
 CYAN='\033[0;36m'; BOLD='\033[1m'; DIM='\033[2m'; NC='\033[0m'
 
