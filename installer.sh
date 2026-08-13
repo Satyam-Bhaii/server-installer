@@ -21,7 +21,7 @@ DG='\033[0;38;5;244m'    # Steel Gray
 NC='\033[0m'             # Reset
 
 # --- CONFIG ---
-CORE_URL="https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/core.sh"
+CORE_URL="https://cdn.jsdelivr.net/gh/Satyam-Bhaii/server-installer@main/core.sh"
 CORE_FILE="/tmp/tyxen-core.sh"
 
 # --- VIP HEADER ---

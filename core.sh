@@ -42,7 +42,7 @@ set -euo pipefail
 #  so the interactive menu, root tools and --help all work normally.
 # ----------------------------------------------------------------------------
 if [ "$0" = "bash" ] || [ "$0" = "-bash" ] || [[ "$0" == /dev/fd/* ]] || [ ! -f "$0" ]; then
-  BOOTSTRAP_URL="https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/core.sh"
+  BOOTSTRAP_URL="https://cdn.jsdelivr.net/gh/Satyam-Bhaii/server-installer@main/core.sh"
   BOOTSTRAP_FILE="/tmp/tyxen-core.sh"
   echo "Downloading TYXEN core from GitHub..."
   curl -fsSL "$BOOTSTRAP_URL" -o "$BOOTSTRAP_FILE" || {
