@@ -17,9 +17,11 @@ Copy-paste this ONE command on your server — a menu appears, select your tools
 everything installs. The script downloads itself and runs with `sudo` automatically:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh)
+bash <(curl -fsSL https://tyxeninstaller.satyam.indevs.in)
 ```
 
+> Direct GitHub link: `https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh`
+>
 > Save a copy for later: `curl -fsSL https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh -o installer.sh`
 
 ## Available Tools

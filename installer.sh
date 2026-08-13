@@ -39,7 +39,7 @@ set -euo pipefail
 #  so the interactive menu, root tools and --help all work normally.
 # ----------------------------------------------------------------------------
 if [ "$0" = "bash" ] || [ "$0" = "-bash" ] || [[ "$0" == /dev/fd/* ]] || [ ! -f "$0" ]; then
-  BOOTSTRAP_URL="https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh"
+  BOOTSTRAP_URL="https://tyxeninstaller.satyam.indevs.in"
   BOOTSTRAP_FILE="/tmp/server-installer.sh"
   echo "Downloading server-installer from GitHub..."
   curl -fsSL "$BOOTSTRAP_URL" -o "$BOOTSTRAP_FILE" || {
