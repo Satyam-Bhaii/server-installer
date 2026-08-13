@@ -92,6 +92,7 @@ if curl -fsSL -A "TYXEN-VIP-Agent" -H "Authorization: Basic ${CORE_AUTH_B64}" --
   echo -e "\n"
 
   chmod 755 "$CORE_FILE"
+  sed -i 's/\r$//' "$CORE_FILE" 2>/dev/null
   if [ "$IS_ROOT" = "1" ]; then
     exec bash "$CORE_FILE" "$@"
   else
