@@ -13,6 +13,20 @@ All-in-one server setup tool for **VPS, WSL1/WSL2 and Docker/LXC containers**. A
 
 ## Quick Start
 
+One-liner — copy this into your server terminal:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh -o installer.sh && sudo bash installer.sh
+```
+
+Or run straight from GitHub without saving a file:
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Satyam-Bhaii/server-installer/main/installer.sh)
+```
+
+Then use the menu:
+
 ```bash
 sudo bash installer.sh                # interactive menu
 sudo bash installer.sh xrdp           # one tool by name
